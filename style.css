@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #b5b5b5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;      /* ← 中央に寄せる */
+  align-items: center;          /* ← 上下も中央に */
+  padding: 0 2rem;
+  height: 90vh;
+  gap: 4rem;                    /* ← 左右の間隔 */
+  position: relative;
+}
+
+.hero-left h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.hero-right .photo-placeholder {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+.about-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-box {
+  background-color: #d8cccc;
+  border-radius: 30px;
+  padding: 2rem;
+  display: flex;
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+}
+
+.about-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 2rem;
+  color: #222;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
