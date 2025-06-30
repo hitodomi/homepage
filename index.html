@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>Shu Nunome Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <div class="logo">SHU NUNOME</div>
+        <div class="logo" id="logo">SHU NUNOME</div>
         <nav>
             <ul>
                 <li><a href="#top">TOP</a></li>
@@ -25,18 +26,21 @@
             <h1>Shu’s<br>Developer<br>Portfolio</h1>
         </div>
         <div class="hero-right">
-            <div class="photo-placeholder">写真</div>
-        </div>
-        <div class="scroll-down">▼<br>scroll down</div>
+            <div class="photo-placeholder">
+                <img src="images/profile.jpg" alt="プロフィール写真">
+            </div>
+            <div class="scroll-down">▼<br>scroll down</div>
     </section>
 
     <section id="about" class="about-section">
         <div class="about-box">
             <div class="about-label">ABOUT</div>
             <div class="about-content">
-                <div class="about-photo">写真</div>
+                <div class="about-photo">
+                    <img src="images/profile.jpg" alt="プロフィール写真">
+                </div>
                 <div class="about-text">
-                    <p><strong>2004年生まれ、愛知県在住。</strong><br>
+                    <p>2004年生まれ、愛知県在住。<br>
                         愛知工業大学 情報科学部 情報科学科 コンピュータシステム専攻 自然言語処理研究室所属の布目柊です。<br>
                         Web開発やUI/UX、AIに興味があります。</p>
                 </div>
@@ -44,6 +48,75 @@
         </div>
     </section>
 
+    <section id="works" class="works-section">
+        <div class="works-box">
+            <h2 class="works-title">WORKS</h2>
+
+            <div class="work-item">
+                <div class="work-photo"><img src="images/buzztalk.png" alt="BuzzTalk"></div>
+                <div class="work-text">
+                    <h3>BuzzTalk</h3>
+                    <p>盛り上がりを可視化するアプリ</p>
+                </div>
+            </div>
+
+            <div class="work-item reverse">
+                <div class="work-text">
+                    <h3>必殺！筆文字</h3>
+                    <p>大きな筆を使って、お題の漢字を別の漢字に変えるゲーム</p>
+                </div>
+                <div class="work-photo"><img src="images/hudemoji.jpg" alt="筆文字ゲーム"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title">CONTACT</h2>
+        <div class="contact-icons">
+            <a href="https://github.com/hitodomi" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="mailto:k23089kk@aitech.ac.jp">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a href="#top" class="back-to-top">▲</a>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Shu Nunome</p>
+        </div>
+    </footer>
+
+    <script>
+        // ロゴクリックでページをリロード
+        document.getElementById("logo").addEventListener("click", () => {
+            location.reload();
+        });
+
+        // スムーズスクロール（全メニュー・フッターの▲含む）
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const headerOffset = 80; // ヘッダーの高さ分ずらす
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

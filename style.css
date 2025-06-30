@@ -29,9 +29,31 @@ nav ul {
 }
 
 nav a {
+  position: relative;
   text-decoration: none;
   color: #000;
   font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #444;
+  transform: scale(1.05);
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 .hero {
@@ -54,12 +76,15 @@ nav a {
 .hero-right .photo-placeholder {
   width: 200px;
   height: 200px;
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #555;
+  overflow: hidden; /* はみ出しカット */
+  border-radius: 5px;
+}
+
+.hero-right .photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* はみ出す部分を切り取って中央にフィット */
+  display: block;
 }
 
 .scroll-down {
@@ -102,6 +127,7 @@ nav a {
   font-weight: bold;
   margin-right: 2rem;
   color: #222;
+  transform: rotate(180deg) translateY(40px);
 }
 
 .about-content {
@@ -114,15 +140,149 @@ nav a {
 .about-photo {
   width: 200px;
   height: 200px;
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  overflow: hidden; /* はみ出しカット */
+  border-radius: 5px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* はみ出す部分を切り取って中央にフィット */
+  display: block;
 }
 
 .about-text {
   flex: 1;
   font-size: 1rem;
   line-height: 1.8;
+}
+
+.works-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.works-box {
+  background-color: #ccd8d5;
+  border-radius: 30px;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.works-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.work-item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.work-item.reverse {
+  justify-content: flex-end; /* ← 横方向に右寄せ */
+  text-align: right;         /* ← テキストも右寄せ */
+}
+
+.work-photo {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  overflow: hidden;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.work-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-text h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+}
+
+.work-text p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-section {
+  background-color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+  color: #333;
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-icons a:hover .material-symbols-outlined {
+  transform: scale(1.1);
+  background-color: #ccc;
+}
+
+.contact-icons i {
+  color: #000; /* ← アイコンの色を黒に指定 */
+}
+
+.site-footer {
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.footer-top {
+  background-color: #555;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.footer-top .back-to-top {
+  font-size: 1.0rem;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-bottom {
+  background: linear-gradient(to bottom, #222, #1a1a1a);
+  padding: 2rem 3rem;
+  text-align: center;  /* ← ここで中央揃えに */
+  border-radius: 0;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0;
 }
