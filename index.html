@@ -53,7 +53,10 @@
             <h2 class="works-title">WORKS</h2>
 
             <div class="work-item">
-                <div class="work-photo"><img src="images/buzztalk.png" alt="BuzzTalk"></div>
+                <a href="buzztalk.html" class="work-photo hover-overlay">
+                    <img src="images/buzztalk.png" alt="BuzzTalk">
+                    <span class="hover-text">Read More</span>
+                </a>
                 <div class="work-text">
                     <h3>BuzzTalk</h3>
                     <p>盛り上がりを可視化するアプリ</p>
@@ -65,7 +68,10 @@
                     <h3>必殺！筆文字</h3>
                     <p>大きな筆を使って、お題の漢字を別の漢字に変えるゲーム</p>
                 </div>
-                <div class="work-photo"><img src="images/hudemoji.jpg" alt="筆文字ゲーム"></div>
+                <a href="hudemoji.html" class="work-photo hover-overlay">
+                    <img src="images/hudemoji.jpg" alt="筆文字ゲーム">
+                    <span class="hover-text">Read More</span>
+                </a>
             </div>
         </div>
     </section>
@@ -98,16 +104,19 @@
             location.reload();
         });
 
-        // スムーズスクロール（全メニュー・フッターの▲含む）
+        // スムーズスクロール：#topだけ headerOffset を使う
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const target = document.querySelector(targetId);
                 if (target) {
-                    const headerOffset = 80; // ヘッダーの高さ分ずらす
+                    const headerOffset = 80;
                     const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    const offsetPosition =
+                        targetId === "#top"
+                            ? elementPosition + window.pageYOffset - headerOffset
+                            : target.offsetTop;
 
                     window.scrollTo({
                         top: offsetPosition,

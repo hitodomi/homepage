@@ -1,0 +1,61 @@
+<!-- hudemoji.html -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>必殺！筆文字 - 詳細ページ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">SHU NUNOME</div>
+        <nav>
+            <ul>
+                <li><a href="index.html#top">TOP</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#works">WORKS</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 2rem; max-width: 800px; margin: auto;">
+        <h1>必殺！筆文字</h1>
+        <img src="images/hudemoji.jpg" alt="筆文字ゲーム" style="width: 100%; max-width: 600px;">
+        <p style="margin-top: 2rem; line-height: 1.8;">
+            筆を使ってお題の漢字を別の漢字に変えるアクションゲームです。<br>
+            制限時間内にどれだけ多くの漢字を完成させられるかを競います。<br>
+            本作は、2023年の東京ゲームショウに向けてチームで企画・開発し、学生ブースに出展しました。<br>
+        </p>
+        <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">デモ動画</h2>
+        <video controls style="width: 100%; max-width: 600px; margin-top: 2rem;">
+            <source src="videos/hudemoji-demo.mp4" type="video/mp4">
+            お使いのブラウザは video タグに対応していません。
+        </video>
+
+        <div style="margin-top: 1.5rem;">
+            <a href="index.html#works" class="back-link">
+                ← WORKS一覧に戻る
+            </a>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a href="#top" class="back-to-top">▲</a>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Shu Nunome</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("logo").addEventListener("click", () => {
+            location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>

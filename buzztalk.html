@@ -1,0 +1,102 @@
+<!-- buzztalk.html -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BuzzTalk - 詳細ページ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">SHU NUNOME</div>
+        <nav>
+            <ul>
+                <li><a href="index.html#top">TOP</a></li>
+                <li><a href="index.html#about">ABOUT</a></li>
+                <li><a href="index.html#works">WORKS</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 2rem; max-width: 800px; margin: auto;">
+        <h1>BuzzTalk</h1>
+        <img src="images/buzztalk.png" alt="BuzzTalk" style="width: 100%; max-width: 600px;">
+        <p style="margin-top: 2rem; line-height: 1.8;">
+            BuzzTalkは、イベント会場での盛り上がりをリアルタイムで可視化するアプリです。<br>
+            観客の声援や拍手の大きさを計測し、ゲージとして表示。<br>
+            GoogleFormと連携、サイト内で観客にアンケートを共有してフィードバックを収集できます。<br>
+            本アプリはチームで開発しており、私は主にログイン機能とアンケート連携機能を担当しました。
+        </p>
+        <section style="margin-top: 3rem;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">画面紹介</h2>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">① Top画面</h3>
+                <img src="images/buzztalk-top.png" alt="Top画面" style="width: 100%; max-width: 600px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">② ログイン画面</h3>
+                <img src="images/buzztalk-login.png" alt="ログイン画面" style="width: 100%; max-width: 600px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">③ Home画面</h3>
+                <img src="images/buzztalk-home.png" alt="Home画面" style="width: 100%; max-width: 600px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">④ 測定画面</h3>
+                <img src="images/buzztalk-measure.png" alt="測定画面" style="width: 100%; max-width: 600px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">⑤ 結果画面</h3>
+                <img src="images/buzztalk-result.png" alt="結果画面" style="width: 100%; max-width: 600px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">⑥ アンケート一覧画面</h3>
+                <img src="images/buzztalk-surveylist.png" alt="アンケート一覧画面" style="width: 100%; max-width: 600px;">
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3 style="font-size: 1.2rem;">⑦ 結果一覧画面</h3>
+                <img src="images/buzztalk-resultlist.png" alt="結果一覧画面" style="width: 100%; max-width: 600px;">
+            </div>
+            <!-- 実際のページリンク -->
+            <p style="margin-top: 1rem;">
+                ▶ 実際のページはこちら：
+                <a href="https://syshack-2025spring.vercel.app/" target="_blank"
+                    style="color: #007acc; font-weight: bold;">
+                    https://syshack-2025spring.vercel.app/
+                </a>
+            </p>
+        </section>
+        <div style="margin-top: 1.5rem;">
+            <a href="index.html#works" class="back-link">
+                ← WORKS一覧に戻る
+            </a>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a href="#top" class="back-to-top">▲</a>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Shu Nunome</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("logo").addEventListener("click", () => {
+            location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>
