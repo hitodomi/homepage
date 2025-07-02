@@ -135,11 +135,11 @@ nav a:hover::after {
 .about-label {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-right: 2rem;
   color: #222;
-  transform: rotate(180deg) translateY(40px);
+  transform: rotate(180deg) translateY(15px);
 }
 
 .about-content {
