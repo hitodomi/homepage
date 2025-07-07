@@ -387,3 +387,18 @@ nav a:hover::after {
   opacity: 1;
 }
 
+/* 初期状態：非表示 */
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* フェードアウト中 */
+body.fade-out {
+  opacity: 0;
+}
+
+/* フェードイン後の表示状態（JSで付与） */
+body.fade-in {
+  opacity: 1;
+}

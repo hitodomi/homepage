@@ -127,6 +127,46 @@
             });
         });
     </script>
+    <script>
+        // ===== フェードイン（読み込み時） =====
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.add('fade-in');
+            }, 200); // 遅延で自然に
+        });
+
+        // ===== 外部リンク・ページ遷移時にフェードアウト =====
+        document.querySelectorAll('a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+            const isInternalAnchor = href && href.startsWith('#');
+            const isExternal = link.hasAttribute('target');
+
+            if (!isInternalAnchor && !isExternal && href) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const url = this.href;
+                    document.body.classList.remove('fade-in');
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                });
+            }
+        });
+
+        // ===== ロゴクリックもフェードアウトしてトップに遷移 =====
+        const logo = document.getElementById("logo");
+        if (logo) {
+            logo.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.body.classList.remove('fade-in');
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = "index.html"; // ロゴクリックでトップへ
+                }, 600);
+            });
+        }
+    </script>
 </body>
 
 </html>
